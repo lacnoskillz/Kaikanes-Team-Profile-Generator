@@ -1,3 +1,6 @@
+function generate(team){
+
+
 function engineersection(engineer){
       if(engineer == null){
             return ""
@@ -17,6 +20,10 @@ function engineersection(engineer){
 }
 
 function generateMarkdown(data) {
+  for(var i=0; i<data.length; i++){
+
+
+  }
       const engineersection = engineersection();
         return `
         <!DOCTYPE html>
@@ -53,5 +60,5 @@ function generateMarkdown(data) {
 
 </html>`;
 }
-
-module.exports = generateMarkdown;
+}
+module.exports = generate;

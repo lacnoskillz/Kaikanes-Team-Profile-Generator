@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require('./dist/markdown.js');
+const Employee = require("./Employee");
+
 const managerquestions = [
     {
         type: 'input',
@@ -96,7 +98,8 @@ const internquestions = [
   
 //   }
 
-
+engineerarray =[];
+internarray = [];
 questionsasked = managerquestions;
 function init(questionsasked){
     if(questionsasked == engineerquestions){
@@ -109,20 +112,25 @@ inquirer
     .prompt(questionsasked)
    
     .then((data) => {
-        
+        const Manager1 = new Managers(data.manager,data.id,data.email,data.office);
         
     
         if(data.add == 'engineer'){
+            const Engineer1 = new Engineer(data.engineer,data.id,data.email,data.github);
+            engineerarray.push(Engineer1);
             questionsasked= engineerquestions;
             init(questionsasked);
         }
       if(data.add == 'intern'){
+        const Intern1 = new Intern(data.manager,data.id,data.email,data.school);
+        internarray.push(Intern1);
            questionsasked = internquestions;
             init(questionsasked);
         }
     if(data.add == 'finish'){
         const filename = 'sampleindex.html';
-        writetofile(filename, data);
+        writetofile(filename, markdown([Manager1,...engineerarray,...internarray]));
+        
     }
      
   });
