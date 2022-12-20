@@ -88,15 +88,7 @@ const internquestions = [
         
     }
 ];
-// function writetofile(filename, data) {
-//     const markdown = generateMarkdown(data);
-//     // const http = "https://github.com/"+data.github+"?tab=repositories";
-//     fs.writeFile(filename, markdown,
-  
-//       (err) => err ? console.log(err) : console.log('index.html generating...')
-//     );
-  
-//   }
+
 
 engineerarray =[];
 internarray = [];
@@ -129,8 +121,11 @@ inquirer
         }
     if(data.add == 'finish'){
         const filename = 'sampleindex.html';
-        writetofile(filename, markdown([Manager1,...engineerar ray,...internarray]));
-        
+     const genereatedmarkdown =  markdown([Manager1,...engineerarray,...internarray]);
+     fs.writeFile(filename, markdown,
+
+        (err) => err ? console.log(err) : console.log('page generating...')
+      );
     }
      
   });
