@@ -129,7 +129,7 @@ inquirer
         }
     if(data.add == 'finish'){
         const filename = 'sampleindex.html';
-        writetofile(filename, markdown([Manager1,...engineerarray,...internarray]));
+        writetofile(filename, markdown([Manager1,...engineerar ray,...internarray]));
         
     }
      

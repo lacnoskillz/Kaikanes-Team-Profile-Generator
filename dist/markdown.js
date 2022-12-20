@@ -5,7 +5,7 @@ function engineersection(engineer){
       if(engineer == null){
             return ""
     }else{
-            return `<div class="card" style="width: 18rem;">
+            return x = `<div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">${data.engineer}</h5>
               <p class="card-text">Ocupation</p>
@@ -18,12 +18,12 @@ function engineersection(engineer){
           </div>`
     }
 }
+for(var i=0; i<team.length; i++){
 
+
+}
 function generateMarkdown(data) {
-  for(var i=0; i<data.length; i++){
-
-
-  }
+ 
       const engineersection = engineersection();
         return `
         <!DOCTYPE html>
