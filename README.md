@@ -7,6 +7,7 @@ for users to quickly create a webpage to have access to their emails and GitHub 
 ### Technologys
 ***
 * Inquirer 8.2.4
+* jest
 * Github.com
 * Slack
 * Zoom
