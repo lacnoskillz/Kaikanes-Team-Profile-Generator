@@ -16,4 +16,4 @@ for users to quickly create a webpage to have access to their emails and GitHub 
 #### Link
 ***
 click for walk through Video
-[click me](https://youtu.be/)
+[click me](https://drive.google.com/file/d/1ozSnXDDGXyPXNBZwwiqE498T0DrVGc6V/view)
