@@ -12,7 +12,7 @@ for users to quickly create a webpage to have access to their emails and GitHub 
 * Zoom
 #### Screen shot
 ***
-![image](./assets/images/)
+![image](./assets/images/Screenshot%20(81).png)
 #### Link
 ***
 click for walk through Video
