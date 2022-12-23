@@ -1,3 +1,4 @@
+//packages needed for application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require('./dist/markdown.js');
@@ -5,6 +6,7 @@ const markdown = require('./dist/markdown.js');
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer")
+// array for the first set of questions which are for the manager
 const managerquestions = [
     {
         type: 'input',
@@ -34,6 +36,7 @@ const managerquestions = [
         name: 'add'
     }
 ];
+//2nd array of questions for the engineer
 const engineerquestions = [
     {
         type: 'input',
@@ -62,6 +65,7 @@ const engineerquestions = [
         name: 'add'
     }
 ];
+//3rd array of questions for intern
 const internquestions = [
     {
         type: 'input',
@@ -92,10 +96,13 @@ const internquestions = [
     }
 ];
 
+//declare variable and arrays for storing data
 let Manager1 = 0;
 engineerarray = [];
 internarray = [];
+//setting first set of questions to be the manager ones. "magerquestions"
 questionsasked = managerquestions;
+//function that runs on start that begins the app to promp user for questions
 function init(questionsasked) {
 
     inquirer
@@ -103,7 +110,7 @@ function init(questionsasked) {
 
         .then((data) => {
 
-
+            //if statements that check which array of questions are being asked and stores that data into a variable or array
             if (questionsasked == managerquestions) {
                 Manager1 = new Manager(data.manager, data.id, data.email, data.office);
                 console.log("manager1", Manager1)
@@ -116,16 +123,18 @@ function init(questionsasked) {
                 internarray.push(Intern1);
                 console.log("intern array", internarray);
             }
-
+            // if the data.add choice is = 'engineer' then asks user engineerquestions
             if (data.add == 'engineer') {
                 questionsasked = engineerquestions;
                 init(questionsasked);
             }
+             // if the data.add choice  is = 'engineer' then asks user engineerquestions
             if (data.add == 'intern') {
 
                 questionsasked = internquestions;
                 init(questionsasked);
             }
+            // if the data.add choice = 'finish. then write HTML file
             if (data.add == 'finish') {
                 const filename = 'sampleindex.html';
                 //const generatemarkdown2 = markdown2(data);
@@ -138,4 +147,5 @@ function init(questionsasked) {
 
         });
 }
+//calls init function
 init(questionsasked);

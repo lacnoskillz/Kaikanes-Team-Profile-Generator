@@ -1,9 +1,10 @@
+// the exported function that takes all the info from the prompts. manager info and the 2 arrays from engineer prompts and intern prompts
 function generate(Manager1, engineerarray, internarray) {
   console.log("this the manager", Manager1);
   console.log("engineers", engineerarray);
   console.log("interns", internarray);
 
-
+// intern function that checks if there is data for the intern. if no return empty string. if yes returns the template literall for intern card
   function internsection(data) {
     if (data == null) {
       return ""
@@ -22,7 +23,7 @@ function generate(Manager1, engineerarray, internarray) {
         </div>`
     }
   }
-
+// intern function that checks if there is data for the engineer. if no return empty string. if yes returns the template literall for engineer card
   function engineersection(data) {
     if (data == null) {
       return ""
@@ -40,6 +41,7 @@ function generate(Manager1, engineerarray, internarray) {
           </div>`
     }
   }
+  //returns template literal for manager section using the data user inputed
   function managersection(data) {
     return `<div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -63,6 +65,8 @@ function generate(Manager1, engineerarray, internarray) {
     //     engineersection(member)
     //   }
     // }
+
+    //createing variables to insert the arrays into;
     var x = '';
     var y = '';
     var z = managersection(Manager1);
@@ -99,8 +103,9 @@ function generate(Manager1, engineerarray, internarray) {
    
    </html>`;
   }
-
+//setting a variable equall to the return of genereate markdown
   const ThelastMarkdown = generateMarkdown(Manager1, engineerarray, internarray)
+  //return the markdown with all info
   return ThelastMarkdown;
 }
 
